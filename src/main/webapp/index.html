@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Test client for recipe db</h1>
+
+    <h3>Only supports adding new objects, use Postman to test other functionality</h3>
+    <h4>API root context for Postman requests: /webapi</h4>
+    <fieldset>
+        <legend>Sign in (uses default credentials)</legend>
+        <button id="login-button">Sign in</button>
+    </fieldset>
+    <fieldset>
+        <legend>Add ingredient:</legend>
+        <label>Name <input type="text" name="name" id="ingredient-name"></label>
+        <label>Unit <input type="text" name="unit" id="ingredient-unit"></label>
+        <label>Portion size <input type="text" name="amount" id="ingredient-amount"></label>
+        <label>Price per portion <input type="text" name="price" id="ingredient-price"></label>
+        <button id="ingredient-button">Add ingredient</button>
+    </fieldset>
+    <fieldset>
+        <legend>Add tag:</legend>
+        <label>Name <input type="text" name="name" id="tag-name"></label>
+        <button id="tag-button">Add tag</button>
+    </fieldset>
+    <fieldset>
+        <legend>Add recipe:</legend>
+        <label>Name <input type="text" name="name" id="recipe-name"></label>
+        <label>Portions <input type="text" name="portions" id="recipe-portions"></label>
+        <fieldset>
+            <legend>Ingredients </legend>
+            <div>
+                <label>Ingredient 1 <select name="ingredient" id="recipe-ingredient-1">
+                    <option value="-1" >Select ingredient</option>
+                </select></label>
+                <label>Amount <input type="text" name="amount" id="recipe-ingredient-1-amount"></label>
+                <span id='recipe-ingredient-1-unit'></span>
+            </div>
+            <div>
+                <label>Ingredient 2 <select name="ingredient" id="recipe-ingredient-2">
+                    <option value="-1" >Select ingredient</option></select></label>
+                <label>Amount <input type="text" name="amount" id="recipe-ingredient-2-amount"></label>
+                <span id='recipe-ingredient-2-unit'></span>
+            </div>
+            <div>
+                <label>Ingredient 3 <select name="ingredient" id="recipe-ingredient-3">
+                    <option value="-1" >Select ingredient</option></select></label>
+                <label>Amount <input type="text" name="amount" id="recipe-ingredient-3-amount"></label>
+                <span id='recipe-ingredient-3-unit'></span>
+            </div>
+            <div>
+                <label>Ingredient 4 <select name="ingredient" id="recipe-ingredient-4">
+                    <option value="-1" >Select ingredient</option></select></label>
+                <label>Amount <input type="text" name="amount" id="recipe-ingredient-4-amount"></label>
+                <span id='recipe-ingredient-4-unit'></span>
+            </div>
+            <div>
+                <label>Ingredient 5 <select name="ingredient" id="recipe-ingredient-5">
+                    <option value="-1" >Select ingredient</option></select></label>
+                <label>Amount <input type="text" name="amount" id="recipe-ingredient-5-amount"></label>
+                <span id='recipe-ingredient-5-unit'></span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Tags</legend>
+            <datalist id="recipe-tags"></datalist>
+            <label>Tag 1 <input list="recipe-tags" name="tag" id="recipe-tag-1"></label>
+            <label>Tag 2 <input list="recipe-tags" name="tag" id="recipe-tag-2"></label>
+            <label>Tag 3 <input list="recipe-tags" name="tag" id="recipe-tag-3"></label>
+        </fieldset>
+        <button id="recipe-button">Add recipe</button>
+    </fieldset>
+    <fieldset>
+        <legend>Server response:</legend>
+        Status: <div id="response-status"></div>
+        Body: <div id="response-body"></div>
+    </fieldset>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
