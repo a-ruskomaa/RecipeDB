@@ -1,14 +1,16 @@
 # RecipeDB
 
-Harjoitustyö kurssille SOA and Cloud Computing.
-
-Työn ensimmäinen vaihe on toteutettu ryhmätyönä. Oma vastuuni oli mm. sovelluksen arkkitehtuurin suunnittelu. Toisessa vaiheessa työhön lisättiin autentikointi ja autorisointi. Tässä esitetty ratkaisu on oma toteutukseni, joka poikkesi hieman lopullisesta ryhmätyön palautetusta versiosta.
-
 RecipeDB on Java-sovellus joka tarjoaa REST API:n reseptien tallentamiseen ja hakuun tietokannasta.
+
+Sovellus on harjoitustyö Jyväskylän yliopiston kurssille SOA and Cloud Computing.
+
+Työn ensimmäinen vaihe on toteutettu ryhmätyönä. Oma vastuuni oli mm. sovelluksen arkkitehtuurin suunnittelu, osa service-luokista sekä tiedon persistointi.
+
+Toisessa vaiheessa työhön lisättiin autentikointi ja autorisointi. Tässä esitetty ratkaisu on oma toteutukseni, joka poikkeaa hieman ryhmätyön palautetusta versiosta.
 
 Sovellus on julkaistuna osoitteessa [https://soa-recipedb.herokuapp.com/webapi]
 
-Lyhyt kuvaus endpointeista:
+### Pikainen kuvaus API:sta:
 
 Osa toiminnoista vaatii käyttäjän tunnistautumisen.
 
