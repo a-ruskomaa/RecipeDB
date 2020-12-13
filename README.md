@@ -1,1 +1,105 @@
 # RecipeDB
+
+Harjoitustyö kurssille SOA and Cloud Computing.
+
+Työn ensimmäinen vaihe on toteutettu ryhmätyönä. Oma vastuuni oli mm. sovelluksen arkkitehtuurin suunnittelu. Toisessa vaiheessa työhön lisättiin autentikointi ja autorisointi. Tässä esitetty ratkaisu on oma toteutukseni, joka poikkesi hieman lopullisesta ryhmätyön palautetusta versiosta.
+
+RecipeDB on Java-sovellus joka tarjoaa REST API:n reseptien tallentamiseen ja hakuun tietokannasta.
+
+Sovellus on julkaistuna osoitteessa [https://soa-recipedb.herokuapp.com/webapi]
+
+Lyhyt kuvaus endpointeista:
+
+Osa toiminnoista vaatii käyttäjän tunnistautumisen.
+
+**/auth**
+
+Hyväksyy POST-pyynnön käyttäjän autentikointiin.
+
+Pyynnön Authorization -otsakkeessa oltava Base64-enkoodatut tunnukset, esim. "Basic am9obmxlbm5vbjEyMzoxMjM="
+
+Vastauksen Authorization -otsake sisältää JWT-tokenin jota käytetään myöhempien pyyntöjen autentikointiin.
+
+**/accounts**
+
+Hyväksyy POST-pyynnön uuden käyttäjätilin luomiseksi. Admin-käyttäjälle mahdollisia myös mm. GET ja DELETE pyynnöt.
+
+Pyyntö muotoa:
+```
+{
+    "name":"atomic-testerman",
+    "password":"123123"
+}
+```
+**/users**
+
+Täältä pääsee käsiksi käyttäjäprofiileihin. Käyttäjätilin lisäksi käyttäjän on luotava profiili, joka tapahtuu POST-pyynnöllä:
+```
+{
+    "username":"Atomic Testerman"
+}
+```
+GET-pyyntö listaa kaikkien profiilien tiedot (vain admin).
+
+**/users/{id}**
+
+Hakee yksittäisen käyttäjän tiedot
+
+**/recipes**
+
+GET-pyyntö listaa kaikki reseptit.
+
+POST-pyyntö luo uuden reseptin:
+```
+{
+    "name":"pizza margherita",
+    "portions": 2,
+    "ingredients" : [{
+        "ingredient": {
+        "id": 2,
+        "name": "wheat flour",
+        "portionPrice": 1.5,
+        "portionSize": 1.0,
+        "unit": "kg"
+    },
+    "amount": "0.3"},
+    {
+        "ingredient": {
+        "id": 8,
+        "name": "cheese",
+        "portionPrice": 4.5,
+        "portionSize": 500.0,
+        "unit": "grams"
+    },
+    "amount": "0.5"},
+    {
+        "ingredient": {
+        "id": 10,
+        "name": "canned tomatoes",
+        "portionPrice": 0.8,
+        "portionSize": 500.0,
+        "unit": "grams"
+    },"amount": "0.5"}],
+    "tags": [    {
+        "id": 4,
+        "name": "#italian"
+    },{
+        "id": 7,
+        "name": "#main course"
+    }
+    ]
+}
+```
+
+Reseptin lisäämisen toteutus on aikataulusyistä johtuen kömpelö. Reseptiin kuuluvien raaka-aineiden tietojen on vastattava tietokannasta löytyviä tietoja.
+
+**/recipes/{id}**
+
+**/ingredients**
+
+**/ingredients/{id}**
+
+**/recipes/{id}/ingredients**
+
+**/recipes/{id}/ingredients/{id}**
+
