@@ -20,9 +20,7 @@ Hyväksyy POST-pyynnön käyttäjän autentikointiin.
 
 Pyynnön Authorization -otsakkeessa oltava Base64-enkoodatut tunnukset, esim. "Basic am9obmxlbm5vbjEyMzoxMjM="
 
-Vastauksen Authorization -otsake sisältää JWT-tokenin jota käytetään myöhempien pyyntöjen autentikointiin lisäämällä pyynnön otsakkeeseen:
-
-Authorization: Bearer <token here>
+Vastauksen Authorization -otsake sisältää JWT-tokenin jota käytetään myöhempien pyyntöjen autentikointiin lisäämällä pyynnön otsakkeeseen: Authorization: Bearer \<token here\>
 
 **/accounts**
 
