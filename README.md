@@ -12,7 +12,7 @@ Sovellus on julkaistuna osoitteessa [https://soa-recipedb.herokuapp.com/webapi]
 
 ### Pikainen kuvaus API:sta:
 
-Osa toiminnoista vaatii käyttäjän tunnistautumisen.
+Suurin osa toiminnoista vaatii käyttäjän tunnistautumisen. Osa toiminnoista vaatii admin-oikeudet.
 
 **/auth**
 
@@ -20,8 +20,12 @@ Hyväksyy POST-pyynnön käyttäjän autentikointiin.
 
 Pyynnön Authorization -otsakkeessa oltava Base64-enkoodatut tunnukset, esim. "Basic am9obmxlbm5vbjEyMzoxMjM="
 
-Vastauksen Authorization -otsake sisältää JWT-tokenin jota käytetään myöhempien pyyntöjen autentikointiin.
+Vastauksen Authorization -otsake sisältää JWT-tokenin jota käytetään myöhempien pyyntöjen autentikointiin lisäämällä pyynnön otsakkeeseen:
 
+```
+Authorization: Bearer <token here>
+
+```
 **/accounts**
 
 Hyväksyy POST-pyynnön uuden käyttäjätilin luomiseksi. Admin-käyttäjälle mahdollisia myös mm. GET ja DELETE pyynnöt.
