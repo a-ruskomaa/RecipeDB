@@ -8,7 +8,11 @@ Työn ensimmäinen vaihe on toteutettu ryhmätyönä. Oma vastuuni oli mm. sovel
 
 Toisessa vaiheessa työhön lisättiin autentikointi ja autorisointi. Tässä esitetty ratkaisu on oma toteutukseni, joka poikkeaa hieman ryhmätyön palautetusta versiosta.
 
-Sovellus on julkaistuna osoitteessa [https://soa-recipedb.herokuapp.com/webapi]
+Sovellus on julkaistuna osoitteessa https://soa-recipedb.herokuapp.com/webapi
+
+Sovellukselle on yksinkertainen testikäyttöliittymä osoitteessa https://soa-recipedb.herokuapp.com/ 
+
+Testikäyttöliittymä tarjoaa toiminnallisuuden tagien, raaka-aineiden ja reseptien lisäämiseen.
 
 ### Pikainen kuvaus API:sta:
 
