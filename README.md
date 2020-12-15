@@ -45,7 +45,7 @@ GET-pyyntö listaa kaikkien profiilien tiedot (vain admin).
 
 **/users/{id}**
 
-Hakee yksittäisen käyttäjän tiedot
+Palauttaa yksittäisen käyttäjän tiedot
 
 **/recipes**
 
@@ -97,11 +97,44 @@ Reseptin lisäämisen toteutus on aikataulusyistä johtuen kömpelö. Reseptiin 
 
 **/recipes/{id}**
 
+Palauttaa yksittäisen reseptin tiedot GET-pyynnöllä. PUT tai DELETE pyynnöt mahdollisia reseptin luoneelle tai admin-oikeuksilla varustetulle käyttäjälle.
+
 **/ingredients**
+
+GET-pyyntö listaa kaikki raaka-aineet.
+
+POST-pyynnöllä luodaan uusia raaka-aineita. Pyynnön on oltava muotoa:
+```
+{
+    "name":"onion",
+    "unit":"whole",
+    "portionSize":"1",
+    "portionPrice":"0.5"
+}
+```
 
 **/ingredients/{id}**
 
+Palauttaa yksittäisen raaka-aineen tiedot GET-pyynnöllä. PUT tai DELETE pyynnöt mahdollisia raaka-aineen luoneelle tai admin-oikeuksilla varustetulle käyttäjälle.
+
 **/recipes/{id}/ingredients**
 
+GET-pyyntö listaa kaikki kyseisen reseptin raaka-aineet.
+
+POST-pyynnöllä lisätään reseptiin uusia raaka-aineita. Pyynnön on oltava muotoa:
+
+```
+{
+        "ingredient": {
+        "id": 2,
+        "name": "wheat flour",
+        "portionPrice": 1.5,
+        "portionSize": 1.0,
+        "unit": "kg"
+    },
+    "amount": "0.3"
+}
+```    
 **/recipes/{id}/ingredients/{id}**
 
+Palauttaa yksittäisen raaka-aineen tiedot GET-pyynnöllä. PUT tai DELETE pyynnöt mahdollisia reseptin luoneelle tai admin-oikeuksilla varustetulle käyttäjälle.
