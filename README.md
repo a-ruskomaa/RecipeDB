@@ -1,6 +1,6 @@
 # RecipeDB
 
-RecipeDB on Java-sovellus joka tarjoaa REST API:n reseptien tallentamiseen ja hakuun tietokannasta.
+RecipeDB on Java-sovellus joka tarjoaa REST API:n reseptien, raaka-aineiden ja avainsanojen tallentamiseen ja hakuun tietokannasta.
 
 Sovellus on harjoitustyö Jyväskylän yliopiston kurssille SOA and Cloud Computing.
 
