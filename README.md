@@ -22,10 +22,8 @@ Pyynnön Authorization -otsakkeessa oltava Base64-enkoodatut tunnukset, esim. "B
 
 Vastauksen Authorization -otsake sisältää JWT-tokenin jota käytetään myöhempien pyyntöjen autentikointiin lisäämällä pyynnön otsakkeeseen:
 
-```
 Authorization: Bearer <token here>
 
-```
 **/accounts**
 
 Hyväksyy POST-pyynnön uuden käyttäjätilin luomiseksi. Admin-käyttäjälle mahdollisia myös mm. GET ja DELETE pyynnöt.
